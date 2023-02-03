@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kat's CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Chakra+Petch&family=Dongle:wght@300&family=Josefin+Sans:wght@200&family=Luxurious+Roman&family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,300;1,100;1,300&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            background: #fff;
+            margin: 50px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .left_side {
+            position: relative;
+            background: #003147;
+            padding: 20px;
+            padding-top: 50px;
+        }
+
+        .profileText {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+        }
+
+        .profileText .imgBx {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profileText .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profileText h2 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+
+        .profileText h2 span {
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        .contactInfo {
+            padding-top: 40px;
+        }
+
+        .title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contactInfo ul {
+            position: relative;
+        }
+
+        .contactInfo ul li {
+            position: relative;
+            list-style: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .contactInfo ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #03a9f4;
+        }
+
+        .text0 {
+            color: #fff;
+        }
+
+        .contactInfo ul li span {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.education li {
+            margin-bottom: 15px;
+        }
+
+        .contactInfo.education h5 {
+            color: #03a9f4;
+            font-weight: 500;
+        }
+
+        .contactInfo.education h4:nth-child(2) {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .contactInfo.education h4 {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.languag .percent {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #081921;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .contactInfo.languag .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+
+        .container .right_side {
+            position: relative;
+            background: #fff;
+            padding: 40px;
+        }
+
+        .about {
+            margin-bottom: 50px;
+        }
+
+        .about:last-child {
+            margin-bottom: 0;
+        }
+
+        .title2 {
+            color: #003147;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .about .box {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+
+        .about .box .year_company {
+            min-width: 200px;
+        }
+
+        .about .box .year_company h5 {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 600;
+        }
+
+        .about .box .text h4 {
+            text-transform: uppercase;
+            color: #2a7da2;
+            font-size: 16px;
+        }
+
+        .skills .box {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills .box h4 {
+            text-transform: uppercase;
+            color: #848c99;
+            font-weight: 500;
+        }
+
+        .skills .box .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #f0f0f0;
+        }
+
+        .skills .box .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+
+        .intrest ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+        }
+
+        .intrest ul li {
+            color: #333;
+            list-style: none;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .intrest ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .intrest ul li .fa {
+            color: #03a9f4;
+            font-size: 18px;
+            width: 20px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        @media(max-width:1000px) {
+            .container {
+                margin: 10px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .intrest ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .about .box {
+                flex-direction: column;
+            }
+
+            .about .box .year_company {
+                min-width: 150px;
+                margin-bottom: 5px;
+            }
+
+            .skills .box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img
+                        src="https://lh3.googleusercontent.com/u1G-CmbfHdZ9uJr7MOIy8M6QjwvH7KGkkFJgs53EeWWW_b8CtTsiKCc0o6WyaCq0JpSZATJid7mAdzIGXURcabpyccp7Dijib5VCLCgc26RiXCK29DZ0gzkPxio8HZ0kNm7JJ8mpFwrwUum4emhrQHe3R3HEtM8ZlNSqEMpLvrOskWiOqyKLCoXNJe2-oU6ZcpcK3vIWpr_b2SXzBIyH8Df9VLyV_6GmKPo2hpDyBdo8Evlegly8rwYmdQomfR7D6zKRQ7kj8yxPXh53JrXho62-BF-VJImz_2zwMaNRTBm3lkHHyhi4hcPBpT4Ajtb1vJtxTbnenkJ--aSMznYZU8vXER0t3IzoQMJxoiw4ZRflnpeWcmj3dlSrxz-sdZrXxriN5sexa5E0qY40GyEhFxGkVZFyppOxou6WLUcjrbb6GdfLPZdYLtu0B5adcV6LHHLIx-o3YwfpFf65aHqXcKn8evv1tOFZVDMziS4WX38qbr87IaPx1kDTuZbdC52tWVBWR7pZMvsH9VyII8vOyYtmY2wCJFi3DVdyilrbhfWYXhTEdb-pXs7XcG8nTSu9-yrXJnCQ2hG7yh5qLv3bpCmH1zwqfwf685YulGhD58nX8CadpkLcEFsCf6Qk5R5xPSB_908XOHvyUPQdH9srxEu4L8zwZM8xzNtW4BtffczAwvRRfiTAIMJbVK9LwQcEUiVjC0y-hWw6rhRjDJvF769dyNEwxpHFXRdAUuOk6VXNxuvC1YWwkNMmiPE907RTQVy6NmU2S4i-_Am5ZFsvsSEAwCY8ZI_0VJi7Ly0U-0OQ6f-sd8gTka8DagFoQg01mRK1PuVDE7vBXLf8vth6ArMLQi_EMTOFCDumDo5DHEBtZbNRuiHzojkOXLEn5y2_st3K9P_EpdEpG3lskvOgJh01-wdkQzTZwOwEmD8Lk6yYApGe=w417-h625-no?authuser=0">
+                </div>
+                <h2>Kathiravan A<br><span>Full stack Developer</span></h2>
+            </div>
+            <div class="contactInfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 9095043789</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <span class="text">kathiravanarjunan369@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <a href="" class="text0"
+                            target="_blank">kathiravan-arjunan-942975238</a>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Erode, TamilNadu, India</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo education">
+                <h3 class="title">Tech Projects</h3>
+                <ul>
+                    <li>
+                        <h5>2015 - 2016</h5>
+                        <h4>Cube Satelite</h4>
+                    </li>
+                    <li>
+                        <h5>2016 - 2017</h5>
+                        <h4>Anti Tank Missile</h4>
+                        <h4>Computer vision Guidance system</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo languag">
+                <h3 class="title">Professional Skills</h3>
+                <ul>
+                    <li>
+                        <span class="text">HTML</span>
+                        <span class="percent">
+                            <div style="width: 80%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">CSS</span>
+                        <span class="percent">
+                            <div style="width: 95%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">BOOTSTRAP</span>
+                        <span class="percent">
+                            <div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">JAVASCRIPT</span>
+                        <span class="percent">
+                            <div style="width: 80%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">REACT JS</span>
+                        <span class="percent">
+                            <div style="width: 95%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">NODE JS</span>
+                        <span class="percent">
+                            <div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">MYSQL</span>
+                        <span class="percent">
+                            <div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">MONGODB</span>
+                        <span class="percent">
+                            <div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo languag">
+                <h3 class="title">languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width: 80%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Tamil</span>
+                        <span class="percent">
+                            <div style="width: 95%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Russian</span>
+                        <span class="percent">
+                            <div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>I am an enthusiastic, self-motivated, reliable, responsible and hard working person. I am a mature
+                    team worker and adaptable to all challenging situations.
+                    I am able to work well both in a team
+                    environment as well as using own initiative. I am able to work well under pressure and adhere to
+                    strict deadlines.</p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Education</h2>
+
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2022 - present</h5>
+                        <h5>Guvi, Chennai</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">FULL STACK DEVELOPER</h4>
+                        <ul>
+                            <li>By this course i learned about web development skills,</li>
+                            <li>learned HTML, CSS, JS and React for frontend,</li>
+                            <li>Express and node for backend, </li>
+                            <li>Mysql and mongodb for database.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2020 - 2021</h5>
+                        <h5>Moscow Aviation</h5>
+                        <h5>Institute, Russia</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">diploma in russian language</h4>
+                        <ul>
+                            <li>By this course i learned technical russian,</li>
+                            <li>It covers full russian grammer as well as engineering thecnical terms</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2017 - 2018</h5>
+                        <h5>Sri designe cad tech, chennai</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">diploma in Areo cad</h4>
+                        <ul>
+                            <li>By this course i learned about Engineering designing techniques,</li>
+                            <li>It covers CAD, Catia v5 for designing,</li>
+                            <li>Ansys for analysis.</li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2013 - 2017</h5>
+                        <h5>Periyar maniammai</h5>
+                        <h5>university, Thanjavur</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">B.Tech Aerospace engineering  </h4>
+                        <ul>
+                            <li>By this course i learned about all Engineering techniques,</li>
+                            <li>The mechanics behind the aircraft, rockets and satillites</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="about">
+                <h2 class="title2">Web Projects</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Scrapper</h4>
+                        <p>This is Fullstack MERN web-app which could scrap product data from amazon and flipkart.
+                            </p><br /><a style="color: #045980;"
+                            href="https://singular-gingersnap-47de01.netlify.app/" class="text0" target="_blank">click
+                            here to
+                            Web scrapper</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                        <h5 style="margin-bottom: 5px;">Graphs</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Project Management Tool</h4>
+                        <p>This is Fullstack MERN web-app in which we can create and assign a task to the co-workers and they could update their work status.</p><br />
+                        <a style="color: #045980;" href="https://ubiquitous-salmiakki-f4c374.netlify.app/" class="text0"
+                            target="_blank">click here to Project Management Tool</a>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Admin Panel</h4>
+                        <p>This is Fullstack MERN web-app made with all Crud functionalities.</p><br />
+                        <a style="color: #045980;" href="https://fancy-flan-b146e9.netlify.app/"
+                            class="text0" target="_blank">click here to Admin Panel</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>E-Commerce</h4>
+                        <p>This is Fullstack MERN web-app made with all the requirements to satisfy a E-com site.
+    </p><br />
+                        <a style="color: #045980;" href="https://stately-medovik-aea808.netlify.app/" class="text0"
+                            target="_blank">click here to E-Commerce</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="about intrest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <!-- <li>
+                        <span class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></span>
+                        <span class="text">Gaming</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                        <span class="text">Reading</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></i></i></span>
+                        <span class="text">Drawing</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-cutlery" aria-hidden="true"></i></i></span>
+                        <span class="text">Cooking</span>
+                    </li> -->
+                    <li><i class="fa fa-trophy" aria-hidden="true"></i>Aero Modelling</li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i>Reading</li>
+                    <li><i class="fa fa-pencil" aria-hidden="true"></i>Designing</li>
+                    <li><i class="fa fa-desktop" aria-hidden="true"></i>Tech</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
